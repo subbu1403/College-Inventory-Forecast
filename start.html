@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Started</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('colorful-wallpaper-background-multicolored-generative-ai.jpg');
+      background-size: cover;
+      /* Cover the entire container */
+      background-position: center;
+      /* Center the image */
+      background-repeat: no-repeat;
+      /* Do not repeat the image */
+      height: 100vh;
+      /* Set the container height to full viewport height */
+    }
+
+
+
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+      .background-container {
+        background-size: contain;
+        /* Adjust size for smaller screens */
+        height: auto;
+        /* Allow the container to adjust its height */
+      }
+    }
+
+    .form-check-input:checked {
+      background-color: #6c757d;
+      border-color: #6c757d;
+
+    }
+
+    .con {
+      background-color: aqua;
+    }
+
+    .error {
+      border-color: red !important;
+    }
+
+    .alert-text {
+      color: red;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container text-success p-3 text-center position-absolute top-50 start-50 translate-middle">
+    <h1 class="display-1" id="txt"
+      style="font-weight:bold; background: url('pexels-martin-péchy-2078266.jpg') 0 0 / cover no-repeat; -webkit-background-clip:text; -webkit-text-fill-color: transparent;">
+      <b>Welcome to Inventify</b>
+    </h1>
+    <div class="container btm-outlinr-success">
+      <!-- Login Button -->
+      <button id="loginButton" class="btn btn-secondary btn-lg me-5 mt-4" type="button" style="font-weight: 700;"
+        data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+      <!-- Signup Button -->
+      <button id="signupButton" class="btn btn-secondary btn-lg mt-4" type="button" style="font-weight: 700;"
+        data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade centered" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class=" modal-content card " style=" background-color: rgba(255, 255, 255, 0.1); ">
+        <div class=" modal-header">
+          <h5 class="modal-title" style="color: white;" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <!-- Login Form -->
+            <div class="input-group mb-3">
+              <label for="loginUsername" class="input-group-text">Username</label>
+              <input type="text" class="form-control form-control-sm" id="loginUsername" name="username" required>
+            </div>
+            <div class="input-group mb-3 position-relative">
+              <label for="loginPassword" class="input-group-text">Password</label>
+              <input type="password" class="form-control form-control-sm" id="loginPassword" name="password" required>
+              <button class="btn btn-outline-secondary" style="color: white;" type="button" id="toggleLoginPassword">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="alert-text" id="loginPasswordAlert" style="display: none;">Password must be at least 8 characters long and contain at least one digit, one uppercase letter, one lowercase letter, and one special character</div>
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="logTypeDropdown">User Type</label>
+              <select class="form-select form-select-sm" id="logTypeDropdown">
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="form-check d-flex justify-content-between align-items-center">
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input btn-secondary" type="checkbox" value="" id="lrememberMe">
+                <label class="form-check-label" style="color: white;" for="lrememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-decoration-none" style="color: white;">Forgot password?</a>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success">Login</button>
+            </div>
+          </form>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class=" modal-content card" style=" background-color: rgba(255, 255, 255, 0.1);">
+        <div class="modal-header" style="color: white;">
+          <h5 class="modal-title" id="signupModalLabel">Sign up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <!-- Signup Form -->
+            <div class="input-group mb-3">
+              <label for="signupUsername" class="input-group-text">Username</label>
+              <input type="text" class="form-control" id="signupUsername" name="username" required>
+            </div>
+            <div class="input-group mb-3">
+              <label for="signupEmail" class="input-group-text">Email</label>
+              <input type="email" class="form-control" id="signupEmail" name="email" required>
+            </div>
+            <div class="input-group mb-3 position-relative">
+              <label for="signupPassword" class="input-group-text">Password</label>
+              <input type="password" class="form-control" id="signupPassword" name="password" required>
+              <button class="btn btn-outline-secondary" style="color: white;" type="button" id="toggleSignupPassword">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="alert-text" id="signupPasswordAlert" style="display: none;">Password must be at least 8 characters long and contain at least one digit, one uppercase letter, one lowercase letter, and one special character</div>
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="signTypeDropdown">Role</label>
+              <select class="form-select" id="signTypeDropdown">
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input btn-secondary" type="checkbox" value="" id="srememberMe">
+              <label class="form-check-label" style="color: white;" for="srememberMe">
+                Remember me
+              </label>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success">Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script>
+    const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+    const loginPassword = document.getElementById('loginPassword');
+    const loginPasswordAlert = document.getElementById('loginPasswordAlert');
+
+    toggleLoginPassword.addEventListener('click', function () {
+      const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+      loginPassword.setAttribute('type', type);
+
+      // Remove the previous icon
+      const icon = toggleLoginPassword.querySelector('i');
+      icon.remove();
+
+      // Add the new icon
+      const newIconClass = type === 'password' ? 'bi-eye' : 'bi-eye-slash';
+      const newIcon = document.createElement('i');
+      newIcon.classList.add('bi', newIconClass);
+      toggleLoginPassword.appendChild(newIcon);
+    });
+
+    const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+    const signupPassword = document.getElementById('signupPassword');
+    const signupPasswordAlert = document.getElementById('signupPasswordAlert');
+
+    toggleSignupPassword.addEventListener('click', function () {
+      const type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+      signupPassword.setAttribute('type', type);
+
+      // Remove the previous icon
+      const icon = toggleSignupPassword.querySelector('i');
+      icon.remove();
+
+      // Add the new icon
+      const newIconClass = type === 'password' ? 'bi-eye' : 'bi-eye-slash';
+      const newIcon = document.createElement('i');
+      newIcon.classList.add('bi', newIconClass);
+      toggleSignupPassword.appendChild(newIcon);
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      console.log('Login form submitted'); // Log a message to check if the form submission is detected
+      window.location.href = 'demo.html'; // Change 'demo.html' to the desired login page URL
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      console.log('Signup form submitted'); // Log a message to check if the form submission is detected
+      window.location.href = 'demo.html'; // Change 'demo.html' to the desired signup page URL
+    });
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      console.log('Login form submitted'); // Log a message to check if the form submission is detected
+      const userType = document.getElementById('logTypeDropdown').value;
+      if (userType === 'faculty') {
+        window.location.href = 'faculty.html'; // Change 'faculty-login.html' to the desired faculty login page URL
+      } else if (userType === 'admin') {
+        window.location.href = 'admin.html'; // Change 'admin-login.html' to the desired admin login page URL
+      }
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      console.log('Signup form submitted'); // Log a message to check if the form submission is detected
+      const userType = document.getElementById('signTypeDropdown').value;
+      if (userType === 'faculty') {
+        window.location.href = 'faculty.html'; // Change 'faculty-signup.html' to the desired faculty signup page URL
+      } else if (userType === 'admin') {
+        window.location.href = 'admin.html'; // Change 'admin-signup.html' to the desired admin signup page URL
+      }
+    });
+
+    function validateLoginPassword() {
+      const password = loginPassword.value;
+      const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+      if (!passwordRegex.test(password)) {
+        loginPassword.classList.add('error');
+        loginPasswordAlert.style.display = 'block';
+      } else {
+        loginPassword.classList.remove('error');
+        loginPasswordAlert.style.display = 'none';
+      }
+    }
+
+    function validateSignupPassword() {
+      const password = signupPassword.value;
+      const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+      if (!passwordRegex.test(password)) {
+        signupPassword.classList.add('error');
+        signupPasswordAlert.style.display = 'block';
+      } else {
+        signupPassword.classList.remove('error');
+        signupPasswordAlert.style.display = 'none';
+      }
+    }
+
+    // Add event listeners for password validations
+    loginPassword.addEventListener('input', validateLoginPassword);
+    signupPassword.addEventListener('input', validateSignupPassword);
+  </script>
+
+
+</body>
+
+</html>
