@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('colorful-wallpaper-background-multicolored-generative-ai.jpg');
+            background-size: cover;
+            /* Cover the entire container */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+
+            /* Set the container height to full viewport height */
+        }
+
+        .rounded-circle-lg {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .background-container {
+                background-size: contain;
+                /* Adjust size for smaller screens */
+                height: auto;
+                /* Allow the container to adjust its height */
+            }
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .nav-link.active {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="py-3 border-bottom shadow">
+        <div class="container-fluid align-items-center d-flex">
+            <div class="flex-shrink-1 ">
+                <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+
+                </a>
+            </div>
+            <div class="flex-grow-1 d-flex align-items-center">
+                <form class="w-100 me-3 d-flex align-items-center" style="color: white;">
+                    <i class="fs-2 bi bi-bar-chart-line">
+                        <b>Inventify</b>
+                    </i>
+                </form>
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32"
+                            class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="start.html">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid" id="na">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm- px-0">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+                    style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start mt-5"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="fs-5 nav-link align-middle px-0 text-white" id="dashboardBtn">
+                                <i class="bi-speedometer2 text-white"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="productBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-cart4 text-white"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="forecastBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-lightbulb"></i>
+                                <span class="ms-1 d-none d-sm-inline text-white">Forecast</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="orderBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class=" bi bi-journal-check"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Order</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="orderhistoryBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-journal-text"></i>
+                                </i> <span class="ms-1 d-none d-sm-inline text-white">Order History</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="issuedItemsBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-box"></i>
+                                </i> <span class="ms-1 d-none d-sm-inline text-white">Issued Items</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="UserBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-person"></i>
+                                </i> <span class="ms-1 d-none d-sm-inline text-white">Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="adminActionBtn" class="fs-5 mt-3 nav-link px-0 align-middle text-white">
+                                <i class="bi bi-gear"></i>
+                                </i> <span class="ms-1 d-none d-sm-inline text-white">Admin Actions</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+
+            <div class="col py-3" id="fr">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5" id="dashboardSection">
+                            <div class="card" style=" background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(5px);">
+                                <div class="card-body" style="color: white;">
+                                    <h1 class="card-title text-center  mt-3">Dashboard</h1>
+                                    <hr>
+                                    <div class="text-center mb-4">
+                                        <img src="https://via.placeholder.com/150" alt="Profile"
+                                            class="img-thumbnail rounded-circle-lg mb-2">
+                                        <h3>Admin</h3>
+                                    </div>
+                                    <form onsubmit="redirectToPage(event)">
+                                        <div class="input-group mb-5">
+                                            <label for="productName" class="input-group-text">Username</label>
+                                            <input type="text" class="form-control" id="productName" name="productName"
+                                                readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="category" class="input-group-text">Email</label>
+                                            <input type="text" class="form-control" id="category" name="category"
+                                                readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="price" class="input-group-text">Phone</label>
+                                            <input type="number" class="form-control" id="price" name="price" readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="description" class="input-group-text">Address</label>
+                                            <input type="text" class="form-control" id="description" name="description"
+                                                readonly>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5" id="productSection" style="display: none;">
+                            <div class="card" style=" background-color: rgba(0, 0, 0, 0.5);">
+                                <div class="card-body" style="color: white;">
+                                    <h2 class="card-title text-center mb-5 mt-3">Add Product</h2>
+                                    <form id="addProductForm">
+                                        <div class="mb-3">
+                                            <label for="productName" class="form-label">Product</label>
+                                            <input type="text" class="form-control" id="productName" name="productName"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="category" class="form-label">Category</label>
+                                            <input type="text" class="form-control" id="category" name="category"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="price" class="form-label">Price</label>
+                                            <input type="number" class="form-control" id="price" name="price" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="description" class="form-label">Description</label>
+                                            <input type="text" class="form-control" id="description" name="description"
+                                                required>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-secondary"> <i
+                                                    class="fs-5 bi bi-cart4 text-white"> Add Product</i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col py-3" id="forecastSection" style="display: none;">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-5">
+                                        <div class="card" style=" background-color: rgba(0, 0, 0, 0.5);">
+                                            <div class="card-body" style="color: white;">
+                                                <h1 class="card-title text-center ">Forecast</h1>
+                                                <hr>
+
+                                                <form id="forecastSubBtn">
+                                                    <div class="mb-3">
+                                                        <label for="productName" class="form-label">Department</label>
+                                                        <input type="text" class="form-control" id="productName"
+                                                            name="productName">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="category" class="form-label">Product</label>
+                                                        <input type="text" class="form-control" id="category"
+                                                            name="category">
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <button class="btn btn-secondary"><i
+                                                                class="bi bi-graph-up"></i>Forecast</button>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8" id="orderSectionToggle" style="display: none;">
+                            <div class="header">
+                                <h1 class="mb-4" style="color: white;">Inventory</h1>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="searchInput"
+                                                placeholder="Search...">
+                                            <button class="btn btn-primary" id="searchButton"
+                                                type="button">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3 ">
+                                            <select class="form-select" id="filterSelect">
+                                                <option value="all">All Items</option>
+                                                <!-- Add options for different filters if needed -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-success" id="addItemButton">Add Items</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>SNo</th>
+                                        <th>Item Name</th>
+                                        <th>Item Cost</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>Available Quantity</th>
+                                        <th>Admin Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Sample Item 1</td>
+                                        <td>Rs.10</td>
+                                        <td>Sample description for item 1</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Sample Item 2</td>
+                                        <td>Rs.15</td>
+                                        <td>Sample description for item 2</td>
+                                        <td>10</td>
+                                        <td>8</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Sample Item 1</td>
+                                        <td>Rs.10</td>
+                                        <td>Sample description for item 1</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="custom-container" id="orderHistoryToggle" style="display: none;">
+                            <h2 style="color: white;">Ordered Items</h2>
+                            <div class="col-lg-8">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>SNo</th>
+                                                <th>Item Name</th>
+                                                <th>Item Cost</th>
+                                                <th>Description</th>
+                                                <th>Quantity</th>
+                                                <th>Available Quantity</th>
+                                                <th>Admin Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Sample Item 1</td>
+                                                <td>Rs.10</td>
+                                                <td>Sample description for item 1</td>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-warning">Edit</button>
+                                                        <button type="button" class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Sample Item 2</td>
+                                                <td>Rs.15</td>
+                                                <td>Sample description for item 2</td>
+                                                <td>10</td>
+                                                <td>8</td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-warning">Edit</button>
+                                                        <button type="button" class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Sample Item 1</td>
+                                                <td>Rs.10</td>
+                                                <td>Sample description for item 1</td>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-warning">Edit</button>
+                                                        <button type="button" class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <h2 style="color: white;">Issued Items</h2>
+                            <div class="col-lg-8">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>SNo</th>
+                                                <th>Item Name</th>
+                                                <th>Username</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Item 1</td>
+                                                <td>User123</td>
+                                                <td class="user-actions">
+                                                    <button class="btn btn-success">Return</button>
+                                                </td>
+                                            </tr>
+                                            <!-- Additional row -->
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Item 2</td>
+                                                <td>User456</td>
+                                                <td class="user-actions">
+                                                    <button class="btn btn-success">Return</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container" id="issuedItemsToggle" style="display: none;">
+                            <h2 style="color: white;">Issued Items</h2>
+                            <div class="col-lg-8">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo</th>
+                                            <th>Item name</th>
+                                            <th>Username</th>
+                                            <th>Actions</th> <!-- New column for Admin actions -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Sample row -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>A4 Papers</td>
+                                            <td>Irfan</td>
+                                            <td>
+                                                <!-- Admin actions buttons can go here -->
+                                                <button class="btn btn-primary">Edit</button>
+                                                <button class="btn btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows like the above -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="container" id="userToggle" style="display: none;">
+                            <h2 style="color: white;">Issued Items</h2>
+                            <div class="col-lg-8">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo</th>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Sample row -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Demo User</td>
+                                            <td>Demo Name</td>
+                                        </tr>
+                                        <!-- Add more rows like the above -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="container" id="adminActionToggle" style="display: none;">
+                            <h2 style="color: white;">Admin Actions</h2>
+                            <div class="col-lg-8">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo</th>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                            <th>Actions</th> <!-- New column for Admin actions -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Sample row -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Sk Salman</td>
+                                            <td>Salman</td>
+                                            <td>
+                                                <!-- Admin actions buttons can go here -->
+                                                <button class="btn btn-primary">Edit</button>
+                                                <button class="btn btn-danger">Kick</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows like the above -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("dashboardBtn").addEventListener("click", function () {
+            toggleSections("dashboardSection");
+        });
+
+        document.getElementById("productBtn").addEventListener("click", function () {
+            toggleSections("productSection");
+        });
+
+        document.getElementById("forecastBtn").addEventListener("click", function () {
+            toggleSections("forecastSection");
+        });
+
+        document.getElementById("orderBtn").addEventListener("click", function () {
+            toggleSections("orderSectionToggle");
+        });
+        document.getElementById("orderhistoryBtn").addEventListener("click", function () {
+            toggleSections("orderHistoryToggle");
+        });
+        document.getElementById("issuedItemsBtn").addEventListener("click", function () {
+            toggleSections("issuedItemsToggle");
+        });
+        document.getElementById("UserBtn").addEventListener("click", function () {
+            toggleSections("userToggle");
+        });
+        document.getElementById("adminActionBtn").addEventListener("click", function () {
+            toggleSections("adminActionToggle");
+        });
+        document.getElementById("addProductForm").addEventListener("submit", function (event) {
+            // Prevent form submission from reloading the page
+            event.preventDefault();
+
+            // Handle the form submission here, for example:
+            // You can submit the form data via AJAX to add the product
+            // After successful submission, you can display a confirmation message or perform other actions
+            console.log("Form submitted");
+        });
+        document.getElementById("forecastSubBtn").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission from reloading the page
+            // Add your logic to handle the form submission here
+            // For example, you can send the form data via AJAX to add the product
+            // You can also update the UI to show a confirmation message or process the form data
+        });
+        function toggleSections(activeSection) {
+            var sections = ["dashboardSection", "productSection", "forecastSection", "orderSectionToggle", "orderHistoryToggle", "issuedItemsToggle", "userToggle", "adminActionToggle"];
+            sections.forEach(function (section) {
+                var element = document.getElementById(section);
+                if (section === activeSection) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
