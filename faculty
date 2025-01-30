@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('colorful-wallpaper-background-multicolored-generative-ai.jpg');
+            background-size: cover;
+            /* Cover the entire container */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+
+            /* 100% of the viewport height */
+
+            /* 100% of the viewport width */
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+            /* Set the container height to full viewport height */
+        }
+
+        .rounded-circle-lg {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .background-container {
+                background-size: contain;
+                /* Adjust size for smaller screens */
+                height: auto;
+                /* Allow the container to adjust its height */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="py-3 border-bottom shadow">
+        <div class="container-fluid align-items-center d-flex">
+            <div class="flex-shrink-1 ">
+                <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+
+                </a>
+            </div>
+            <div class="flex-grow-1 d-flex align-items-center">
+                <form class="w-100 me-3 d-flex align-items-center" style="color: white;">
+                    <i class="fs-2 bi bi-bar-chart-line">
+                        <b>Inventify</b>
+                    </i>
+                </form>
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32"
+                            class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="start.html">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid" id="na">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-2 pt-1 text-white min-vh-100"
+                    style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start mt-4"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0 text-white" id="dashboardBtn">
+                                <i class="fs-4 bi-speedometer2 text-white"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="productBtn" class="mt-2 nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi bi-cart4 text-white"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Product</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+
+
+            <div class="col py-3" id="fr">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5" id="dashboardSection">
+                            <div class="card" style=" background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(5px);">
+                                <div class="card-body" style="color: white;">
+                                    <h1 class="card-title text-center  mt-3">Dashboard</h1>
+                                    <hr>
+                                    <div class="text-center mb-4">
+                                        <img src="https://via.placeholder.com/150" alt="Profile"
+                                            class="img-thumbnail rounded-circle-lg mb-2">
+                                        <h3>Faculty</h3>
+                                    </div>
+                                    <form onsubmit="redirectToPage(event)">
+                                        <div class="input-group mb-5">
+                                            <label for="productName" class="input-group-text">Username</label>
+                                            <input type="text" class="form-control" id="productName" name="productName"
+                                                readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="category" class="input-group-text">Email</label>
+                                            <input type="text" class="form-control" id="category" name="category"
+                                                readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="price" class="input-group-text">Phone</label>
+                                            <input type="number" class="form-control" id="price" name="price" readonly>
+                                        </div>
+                                        <div class="input-group mb-5">
+                                            <label for="description" class="input-group-text">Address</label>
+                                            <input type="text" class="form-control" id="description" name="description"
+                                                readonly>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5" id="productSection" style="display: none;">
+                            <div class="card" style=" background-color: rgba(0, 0, 0, 0.5);">
+                                <div class="card-body" style="color: white;">
+                                    <h2 class="card-title text-center mb-5 mt-3">Add Product</h2>
+                                    <form id="addProductForm">
+                                        <div class="mb-3">
+                                            <label for="productName" class="form-label">Product</label>
+                                            <input type="text" class="form-control" id="productName" name="productName"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="category" class="form-label">Category</label>
+                                            <input type="text" class="form-control" id="category" name="category"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="price" class="form-label">Price</label>
+                                            <input type="number" class="form-control" id="price" name="price" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="description" class="form-label">Description</label>
+                                            <input type="text" class="form-control" id="description" name="description"
+                                                required>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-secondary"> <i
+                                                    class="fs-5 bi bi-cart4 text-white"> Add
+                                                    Product</i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("dashboardBtn").addEventListener("click", function () {
+            toggleSections("dashboardSection");
+        });
+
+        document.getElementById("productBtn").addEventListener("click", function () {
+            toggleSections("productSection");
+        });
+
+        document.getElementById("addProductForm").addEventListener("submit", function (event) {
+            // Prevent form submission from reloading the page
+            event.preventDefault();
+
+            // Handle the form submission here, for example:
+            // You can submit the form data via AJAX to add the product
+            // After successful submission, you can display a confirmation message or perform other actions
+            console.log("Form submitted");
+        });
+        function toggleSections(activeSection) {
+            var sections = ["dashboardSection", "productSection"];
+            sections.forEach(function (section) {
+                var element = document.getElementById(section);
+                if (section === activeSection) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
